@@ -1,0 +1,91 @@
+﻿@model NBADirectory.Models.GameDetailViewModel
+@{
+    ViewData["Title"] = $"{Model.Game.Home_team.Abbreviation} vs {Model.Game.Visitor_team.Abbreviation}";
+    bool homeWin = Model.Game.IsFinal && Model.Game.Home_team_score > Model.Game.Visitor_team_score;
+    bool visitorWin = Model.Game.IsFinal && Model.Game.Visitor_team_score > Model.Game.Home_team_score;
+}
+
+<div class="team-hero">
+    <div class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/Games">試合結果</a></li>
+                <li class="breadcrumb-item active">@Model.Game.DateDisplay</li>
+            </ol>
+        </nav>
+
+        <!-- スコアヘッダー -->
+        <div class="detail-scoreboard">
+            <div class="detail-team @(homeWin ? "team-winner" : "")">
+                <div class="detail-team-abbr">@Model.Game.Home_team.Abbreviation</div>
+                <div class="detail-team-name">@Model.Game.Home_team.Full_name</div>
+                <div class="detail-team-label">HOME</div>
+            </div>
+            <div class="detail-center">
+                <div class="detail-score">
+                    <span class="@(homeWin ? "score-winner" : "")">@Model.Game.Home_team_score</span>
+                    <span class="detail-sep">–</span>
+                    <span class="@(visitorWin ? "score-winner" : "")">@Model.Game.Visitor_team_score</span>
+                </div>
+                <div class="detail-status @(Model.Game.IsLive ? "text-danger" : "text-muted")">
+                    @if (Model.Game.IsLive)
+                    {
+                        <span class="live-dot me-1"></span>
+                    }
+                    @Model.Game.StatusDisplay
+                </div>
+                <div class="text-muted small">@Model.Game.DateDisplay</div>
+                @if (Model.Game.Postseason)
+                {
+                    <span class="badge bg-warning text-dark mt-1">PLAYOFFS</span>
+                }
+            </div>
+            <div class="detail-team text-end @(visitorWin ? "team-winner" : "")">
+                <div class="detail-team-abbr">@Model.Game.Visitor_team.Abbreviation</div>
+                <div class="detail-team-name">@Model.Game.Visitor_team.Full_name</div>
+                <div class="detail-team-label">AWAY</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+
+    @if (!Model.HomeStats.Any() && !Model.VisitorStats.Any())
+    {
+        <div class="alert-sort d-flex align-items-center gap-3 p-3 rounded">
+            <i class="bi bi-info-circle fs-4 text-muted"></i>
+            <div>
+                <div class="fw-bold">個人スタッツデータがありません</div>
+                <div class="small text-muted">試合終了後にスタッツが反映されます。</div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- チームタブ -->
+        <ul class="nav nav-pills conference-tabs mb-4">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#homeStats">
+                    @Model.Game.Home_team.Abbreviation <span class="ms-1 text-accent">@Model.Game.Home_team_score</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#visitorStats">
+                    @Model.Game.Visitor_team.Abbreviation <span class="ms-1 text-accent">@Model.Game.Visitor_team_score</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            @* ホームチーム スタッツ *@
+            <div class="tab-pane fade show active" id="homeStats">
+                @await Html.PartialAsync("_StatsTable", Model.HomeStats)
+            </div>
+            @* ビジターチーム スタッツ *@
+            <div class="tab-pane fade" id="visitorStats">
+                @await Html.PartialAsync("_StatsTable", Model.VisitorStats)
+            </div>
+        </div>
+    }
+</div>

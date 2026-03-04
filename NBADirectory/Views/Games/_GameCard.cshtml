@@ -1,0 +1,70 @@
+﻿@model NBADirectory.Models.Game
+@{
+    bool homeWin = Model.IsFinal && Model.Home_team_score > Model.Visitor_team_score;
+    bool visitorWin = Model.IsFinal && Model.Visitor_team_score > Model.Home_team_score;
+}
+
+<div class="game-card @(Model.IsLive ? "game-card-live" : "")">
+
+    <!-- ステータスバー -->
+    <div class="game-card-status">
+        @if (Model.IsLive)
+        {
+            <span class="game-status-live"><span class="live-dot"></span>@Model.StatusDisplay</span>
+        }
+        else if (Model.IsFinal)
+        {
+            <span class="game-status-final">終了</span>
+        }
+        else
+        {
+            <span class="game-status-scheduled">@Model.StatusDisplay</span>
+        }
+        @if (Model.Postseason)
+        {
+            <span class="badge bg-warning text-dark ms-2">POST</span>
+        }
+    </div>
+
+    <!-- スコアボード -->
+    <div class="game-scoreboard">
+
+        <!-- ホームチーム -->
+        <div class="game-team game-team-home @(homeWin ? "team-winner" : "")">
+            <span class="team-role-badge home">HOME</span>
+            <div class="game-team-abbr">@Model.Home_team.Abbreviation</div>
+            <div class="game-team-name">@Model.Home_team.Full_name</div>
+            @if (homeWin)
+            {
+                <span class="win-badge">WIN</span>
+            }
+        </div>
+
+        <!-- スコア -->
+        <div class="game-scores">
+            <span class="game-score @(homeWin ? "score-winner" : "")">@Model.Home_team_score</span>
+            <span class="game-score-sep">–</span>
+            <span class="game-score @(visitorWin ? "score-winner" : "")">@Model.Visitor_team_score</span>
+        </div>
+
+        <!-- アウェイチーム -->
+        <div class="game-team game-team-away text-end @(visitorWin ? "team-winner" : "")">
+            <span class="team-role-badge away">AWAY</span>
+            <div class="game-team-abbr">@Model.Visitor_team.Abbreviation</div>
+            <div class="game-team-name">@Model.Visitor_team.Full_name</div>
+            @if (visitorWin)
+            {
+                <span class="win-badge">WIN</span>
+            }
+        </div>
+
+    </div>
+
+    <!-- フッター：詳細ボタン -->
+    <div class="game-card-footer">
+        <a href="/Games/Detail/@Model.Id" class="btn btn-sm btn-game-detail">
+            <i class="bi bi-bar-chart-line me-1"></i>詳細を見る
+        </a>
+    </div>
+
+</div>

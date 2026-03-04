@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "C:\\develop\\mvc\\NBADirector\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\games\\_gamecard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\games\\_gamecard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\games\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\games\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\controllers\\gamescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\services\\nbaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\services\\nbaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\games\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\games\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\models\\nbamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\models\\nbamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\games\\_statstable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\games\\_statstable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,18 +75,6 @@
       "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\models\\nbamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\models\\nbamodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|c:\\develop\\mvc\\nbadirector\\nbadirectory\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E9817CBC-154D-5792-05DE-C853D9ACBF3C}|NBADirectory\\NBADirectory.csproj|solutionrelative:nbadirectory\\views\\team\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -66,48 +86,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\appsettings.json",
-              "RelativeDocumentMoniker": "NBADirectory\\appsettings.json",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\appsettings.json",
-              "RelativeToolTip": "NBADirectory\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-04T13:23:02.99Z",
+              "DocumentIndex": 1,
+              "Title": "_GameCard.cshtml",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\_GameCard.cshtml",
+              "RelativeDocumentMoniker": "NBADirectory\\Views\\Games\\_GameCard.cshtml",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\_GameCard.cshtml",
+              "RelativeToolTip": "NBADirectory\\Views\\Games\\_GameCard.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAcwEUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T13:38:02.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "teamSearch.js",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\js\\teamSearch.js",
-              "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\js\\teamSearch.js",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\js\\teamSearch.js",
-              "RelativeToolTip": "NBADirectory\\wwwroot\\js\\teamSearch.js",
-              "ViewState": "AgIAAKAAAAAAAAAAAAAAwKgAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2026-03-01T07:25:49.398Z"
+              "DocumentIndex": 5,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\Detail.cshtml",
+              "RelativeDocumentMoniker": "NBADirectory\\Views\\Games\\Detail.cshtml",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\Detail.cshtml",
+              "RelativeToolTip": "NBADirectory\\Views\\Games\\Detail.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAcwFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T13:36:58.058Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "NBADirectory\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "NBADirectory\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAD4vxAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\Index.cshtml",
+              "RelativeDocumentMoniker": "NBADirectory\\Views\\Games\\Index.cshtml",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\Index.cshtml",
+              "RelativeToolTip": "NBADirectory\\Views\\Games\\Index.cshtml",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAcwFwAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T13:36:24.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GamesController.cs",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\GamesController.cs",
+              "RelativeDocumentMoniker": "NBADirectory\\Controllers\\GamesController.cs",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\GamesController.cs",
+              "RelativeToolTip": "NBADirectory\\Controllers\\GamesController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAawAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T07:08:13.852Z"
+              "WhenOpened": "2026-03-04T13:35:46.281Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 17,
               "Title": "site.js",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\js\\site.js",
@@ -119,7 +154,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
+              "Title": "NbaModels.cs",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Models\\NbaModels.cs",
+              "RelativeDocumentMoniker": "NBADirectory\\Models\\NbaModels.cs",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Models\\NbaModels.cs",
+              "RelativeToolTip": "NBADirectory\\Models\\NbaModels.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAA3wK8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T06:23:40.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\appsettings.json",
+              "RelativeDocumentMoniker": "NBADirectory\\appsettings.json",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\appsettings.json",
+              "RelativeToolTip": "NBADirectory\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-04T13:23:02.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "tsconfig.json",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\ts\\tsconfig.json",
               "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\ts\\tsconfig.json",
@@ -132,6 +192,82 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "NbaApiService.cs",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Services\\NbaApiService.cs",
+              "RelativeDocumentMoniker": "NBADirectory\\Services\\NbaApiService.cs",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Services\\NbaApiService.cs",
+              "RelativeToolTip": "NBADirectory\\Services\\NbaApiService.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAjwNsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T06:00:57.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "NBADirectory\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "NBADirectory\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwFcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-01T06:06:01.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "NBADirectory\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAACgCAAAAAAAAAAAmwDgCAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-01T06:02:51.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_StatsTable.cshtml",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\_StatsTable.cshtml",
+              "RelativeDocumentMoniker": "NBADirectory\\Views\\Games\\_StatsTable.cshtml",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Games\\_StatsTable.cshtml",
+              "RelativeToolTip": "NBADirectory\\Views\\Games\\_StatsTable.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-04T13:38:49.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "NBADirectory\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "NBADirectory\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAD4vxAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-01T07:08:13.852Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "teamSearch.js",
+              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\js\\teamSearch.js",
+              "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\js\\teamSearch.js",
+              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\js\\teamSearch.js",
+              "RelativeToolTip": "NBADirectory\\wwwroot\\js\\teamSearch.js",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAAwKgAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-03-01T07:25:49.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "teamSearch.ts",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\ts\\teamSearch.ts",
               "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\ts\\teamSearch.ts",
@@ -143,19 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "NbaModels.cs",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Models\\NbaModels.cs",
-              "RelativeDocumentMoniker": "NBADirectory\\Models\\NbaModels.cs",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Models\\NbaModels.cs",
-              "RelativeToolTip": "NBADirectory\\Models\\NbaModels.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAzwEgAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T06:23:40.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Program.cs",
               "RelativeDocumentMoniker": "NBADirectory\\Program.cs",
@@ -163,36 +287,11 @@
               "RelativeToolTip": "NBADirectory\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T06:09:31.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T06:09:31.975Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "NBADirectory\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "NBADirectory\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwFMAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-01T06:06:01.744Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "NBADirectory\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "NBADirectory\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAM4BAAAAAAAAAAAcwOYBAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-01T06:02:51.946Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Views\\Team\\Index.cshtml",
               "RelativeDocumentMoniker": "NBADirectory\\Views\\Team\\Index.cshtml",
@@ -204,20 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "NbaApiService.cs",
-              "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Services\\NbaApiService.cs",
-              "RelativeDocumentMoniker": "NBADirectory\\Services\\NbaApiService.cs",
-              "ToolTip": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Services\\NbaApiService.cs",
-              "RelativeToolTip": "NBADirectory\\Services\\NbaApiService.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAewH8AAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T06:00:57.345Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "TeamController.cs",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\Controllers\\TeamController.cs",
               "RelativeDocumentMoniker": "NBADirectory\\Controllers\\TeamController.cs",
@@ -225,12 +311,11 @@
               "RelativeToolTip": "NBADirectory\\Controllers\\TeamController.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAqwDYAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-01T05:59:30.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-01T05:59:30.54Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 15,
               "Title": "NBADirectory.csproj",
               "DocumentMoniker": "C:\\develop\\mvc\\NBADirector\\NBADirectory\\NBADirectory.csproj",
               "RelativeDocumentMoniker": "NBADirectory\\NBADirectory.csproj",

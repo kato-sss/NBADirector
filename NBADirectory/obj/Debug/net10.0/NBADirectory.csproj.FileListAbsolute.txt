@@ -122,7 +122,6 @@ C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\rjsmcshtml.dswa.cache.
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\scopedcss\bundle\NBADirectory.styles.css
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\scopedcss\projectbundle\NBADirectory.bundle.scp.css
-C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\compressed\odkxtxnrcq-{0}-i6p1l0qg2k-i6p1l0qg2k.gz
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\compressed\mjqtl7s4zp-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\compressed\f3tazriput-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\compressed\sst71xy5j9-{0}-be3f16hkqb-be3f16hkqb.gz
@@ -199,3 +198,4 @@ C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\refint\NBADirectory.dl
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\NBADirectory.pdb
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\NBADirectory.genruntimeconfig.cache
 C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\ref\NBADirectory.dll
+C:\develop\mvc\NBADirector\NBADirectory\obj\Debug\net10.0\compressed\odkxtxnrcq-{0}-ybg4csvudd-ybg4csvudd.gz

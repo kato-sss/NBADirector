@@ -1,0 +1,106 @@
+﻿@model NBADirectory.Models.GamesViewModel
+@{
+    ViewData["Title"] = "試合結果";
+    var prevDate = Model.DisplayDate.AddDays(-1).ToString("yyyy-MM-dd");
+    var nextDate = Model.DisplayDate.AddDays(1).ToString("yyyy-MM-dd");
+    var jstNow = DateTime.UtcNow.AddHours(9).Date;
+    var isToday = Model.DisplayDate.Date >= jstNow;
+}
+
+<div class="games-hero">
+    <div class="container py-4">
+        <h1 class="hero-title mb-1">
+            <i class="bi bi-trophy-fill text-accent me-2"></i>試合<span class="text-accent">結果</span>
+        </h1>
+        <p class="hero-subtitle">BallDontLie API よりリアルタイム取得</p>
+    </div>
+</div>
+
+<div class="container py-4">
+
+    <!-- 日付ナビゲーション -->
+    <div class="date-nav d-flex align-items-center gap-3 mb-4 flex-wrap">
+        <a href="/Games?date=@prevDate" class="btn btn-outline-secondary">
+            <i class="bi bi-chevron-left"></i>
+        </a>
+        <div class="date-display">
+            <span class="date-main">@Model.DisplayDate.ToString("yyyy年MM月dd日")</span>
+            <span class="date-day text-muted ms-2">@Model.DisplayDate.ToString("dddd", new System.Globalization.CultureInfo("ja-JP"))</span>
+        </div>
+        <a href="/Games?date=@nextDate"
+           class="btn btn-outline-secondary @(isToday ? "disabled" : "")">
+            <i class="bi bi-chevron-right"></i>
+        </a>
+        <form method="get" action="/Games" class="ms-auto d-flex gap-2">
+            <input type="date" name="date" class="form-control form-control-sm bg-dark border-secondary text-white"
+                   value="@Model.SelectedDate" max="@DateTime.Now.ToString("yyyy-MM-dd")" />
+            <button class="btn btn-sm btn-accent" type="submit">移動</button>
+        </form>
+    </div>
+
+    @if (!Model.Games.Any())
+    {
+        <div class="alert-sort d-flex align-items-center gap-3 p-3 rounded mb-4">
+            <i class="bi bi-calendar-x fs-4 text-muted"></i>
+            <div>
+                <div class="fw-bold">この日の試合データがありません</div>
+                <div class="small text-muted">別の日付を選択するか、前後の日付をお試しください。</div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- ライブ試合 -->
+        @if (Model.LiveGames.Any())
+        {
+            <div class="section-header mb-3">
+                <span class="section-label live">
+                    <span class="live-dot"></span>LIVE
+                </span>
+                <span class="section-title">進行中の試合</span>
+            </div>
+            <div class="row g-3 mb-4">
+                @foreach (var game in Model.LiveGames)
+                {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        @await Html.PartialAsync("_GameCard", game)
+                    </div>
+                }
+            </div>
+        }
+
+        <!-- 終了試合 -->
+        @if (Model.FinalGames.Any())
+        {
+            <div class="section-header mb-3">
+                <span class="section-label final">FINAL</span>
+                <span class="section-title">試合結果 (@Model.FinalGames.Count 試合)</span>
+            </div>
+            <div class="row g-3 mb-4">
+                @foreach (var game in Model.FinalGames)
+                {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        @await Html.PartialAsync("_GameCard", game)
+                    </div>
+                }
+            </div>
+        }
+
+        <!-- 予定試合 -->
+        @if (Model.ScheduledGames.Any())
+        {
+            <div class="section-header mb-3">
+                <span class="section-label scheduled">SCHEDULED</span>
+                <span class="section-title">試合予定 (@Model.ScheduledGames.Count 試合)</span>
+            </div>
+            <div class="row g-3 mb-4">
+                @foreach (var game in Model.ScheduledGames)
+                {
+                    <div class="col-12 col-md-6 col-lg-4">
+                        @await Html.PartialAsync("_GameCard", game)
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>

@@ -1,0 +1,46 @@
+﻿@model List<NBADirectory.Models.GameStat>
+
+<div class="table-responsive">
+    <table class="table table-dark table-hover players-table">
+        <thead>
+            <tr>
+                <th>選手名</th>
+                <th>出場時間</th>
+                <th class="text-center">得点</th>
+                <th class="text-center">REB</th>
+                <th class="text-center">AST</th>
+                <th class="text-center">STL</th>
+                <th class="text-center">BLK</th>
+                <th class="text-center">TO</th>
+                <th class="text-center">FG%</th>
+                <th class="text-center">3P%</th>
+                <th class="text-center">FT%</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stat in Model)
+            {
+                <tr class="player-row">
+                    <td>
+                        <div class="player-name-cell">
+                            <span class="player-last">@stat.Player.Last_name</span>
+                            <span class="player-first">, @stat.Player.First_name</span>
+                        </div>
+                    </td>
+                    <td><small class="text-muted">@stat.Min</small></td>
+                    <td class="text-center">
+                        <span class="stat-pts @(stat.Pts >= 20 ? "stat-highlight" : "")">@stat.Pts</span>
+                    </td>
+                    <td class="text-center">@stat.Reb</td>
+                    <td class="text-center">@stat.Ast</td>
+                    <td class="text-center">@stat.Stl</td>
+                    <td class="text-center">@stat.Blk</td>
+                    <td class="text-center">@stat.Turnover</td>
+                    <td class="text-center"><small>@(stat.Fg_pct > 0 ? $"{stat.Fg_pct:P0}" : "-")</small></td>
+                    <td class="text-center"><small>@(stat.Fg3_pct > 0 ? $"{stat.Fg3_pct:P0}" : "-")</small></td>
+                    <td class="text-center"><small>@(stat.Ft_pct > 0 ? $"{stat.Ft_pct:P0}" : "-")</small></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
