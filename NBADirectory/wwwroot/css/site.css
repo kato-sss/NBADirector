@@ -1,0 +1,499 @@
+/* ================================================
+   NBA 選手名鑑 - Site CSS
+   Dark editorial theme with NBA orange accent
+   ================================================ */
+
+:root {
+    --nba-orange: #f7941d;
+    --nba-blue: #1d428a;
+    --nba-red: #c8102e;
+    --bg-primary: #0d0d10;
+    --bg-card: #16161d;
+    --bg-card-hover: #1e1e2a;
+    --border-color: rgba(255,255,255,0.08);
+    --text-muted-custom: #888;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-condensed: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-primary);
+    color: #e8e8ef;
+    font-family: var(--font-body);
+    min-height: 100vh;
+}
+
+/* ---- NAVBAR ---- */
+.navbar-nba {
+    background: rgba(13,13,16,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+}
+
+.brand-nba {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--nba-orange);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.brand-dir {
+    font-family: var(--font-condensed);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-brand {
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+}
+
+.nav-link {
+    color: #bbb !important;
+    font-family: var(--font-condensed);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+}
+
+.nav-link:hover { color: var(--nba-orange) !important; }
+
+/* ---- HERO ---- */
+.hero-section {
+    background: linear-gradient(135deg, #0d0d10 0%, #151525 50%, #0d0d10 100%);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: "NBA";
+    position: absolute;
+    font-family: var(--font-display);
+    font-size: 20vw;
+    color: rgba(247,148,29,0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: 3px;
+    color: #fff;
+    margin: 0;
+}
+
+.text-accent { color: var(--nba-orange); }
+
+.hero-subtitle {
+    font-family: var(--font-condensed);
+    font-size: 1.1rem;
+    color: var(--text-muted-custom);
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+/* ---- CONFERENCE TABS ---- */
+.conference-tabs .nav-link {
+    text-transform: none;
+    font-size: 0.95rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: #aaa !important;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    margin-right: 0.5rem;
+    transition: all 0.2s;
+}
+
+.conference-tabs .nav-link.active,
+.conference-tabs .nav-link:hover {
+    background: var(--nba-orange) !important;
+    color: #000 !important;
+    border-color: var(--nba-orange);
+}
+
+/* ---- DIVISION HEADER ---- */
+.division-header {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.division-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+.division-label.east { background: var(--nba-blue); color: #fff; }
+.division-label.west { background: var(--nba-red); color: #fff; }
+
+/* ---- TEAM CARD ---- */
+.team-card {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.1rem;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--nba-orange);
+    transition: height 0.25s ease;
+    border-radius: 0 0 0 10px;
+}
+
+.team-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(247,148,29,0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(247,148,29,0.12);
+    color: #fff;
+}
+
+.team-card:hover::after { height: 100%; }
+
+.team-abbr {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--nba-orange);
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.team-city {
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    color: var(--text-muted-custom);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+.team-name {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.team-arrow {
+    position: absolute;
+    bottom: 0.8rem;
+    right: 0.8rem;
+    color: var(--text-muted-custom);
+    font-size: 0.8rem;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.team-card:hover .team-arrow {
+    transform: translateX(3px);
+    color: var(--nba-orange);
+}
+
+/* ---- TEAM PAGE HERO ---- */
+.team-hero {
+    background: linear-gradient(135deg, #111118 0%, #181828 100%);
+    border-bottom: 2px solid var(--nba-orange);
+}
+
+.team-badge-large {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    color: var(--nba-orange);
+    letter-spacing: 3px;
+    background: rgba(247,148,29,0.08);
+    border: 2px solid rgba(247,148,29,0.3);
+    border-radius: 12px;
+    padding: 0.5rem 1.2rem;
+    line-height: 1;
+}
+
+.team-page-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: 2px;
+}
+
+.team-meta-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.badge-east { background-color: var(--nba-blue) !important; }
+.badge-west { background-color: var(--nba-red) !important; }
+.badge-division { background-color: #333 !important; color: #ccc !important; }
+
+/* ---- SEARCH ---- */
+.search-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(247,148,29,0.25);
+    border-color: rgba(247,148,29,0.5);
+}
+
+.btn-accent {
+    background: var(--nba-orange);
+    color: #000;
+    border: none;
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.btn-accent:hover { background: #e0841a; color: #000; }
+
+/* ---- PLAYERS TABLE ---- */
+.players-table {
+    font-family: var(--font-body);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.players-table thead th {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: var(--text-muted-custom);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem;
+    white-space: nowrap;
+}
+
+.players-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background 0.15s;
+}
+
+.players-table tbody tr:hover { background-color: var(--bg-card-hover) !important; }
+
+.players-table td {
+    padding: 0.65rem 0.75rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+.jersey-num {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--nba-orange);
+    letter-spacing: 1px;
+    min-width: 2.5rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.player-name-cell { white-space: nowrap; }
+.player-last { font-weight: 600; font-family: var(--font-condensed); font-size: 1rem; }
+.player-first { color: #aaa; font-size: 0.9rem; }
+
+/* ---- POSITION BADGES ---- */
+.position-badge {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.pos-g, .pos-gg, .pos-gf, .pos-fg { background: rgba(52,152,219,0.2); color: #5dade2; border: 1px solid rgba(52,152,219,0.3); }
+.pos-f, .pos-ff, .pos-fc, .pos-cf { background: rgba(46,204,113,0.2); color: #58d68d; border: 1px solid rgba(46,204,113,0.3); }
+.pos-c, .pos-cc { background: rgba(231,76,60,0.2); color: #e74c3c; border: 1px solid rgba(231,76,60,0.3); }
+
+/* ---- PLAYER CARDS ---- */
+.player-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.player-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(247,148,29,0.3);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.player-card-header {
+    background: rgba(247,148,29,0.06);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player-card-jersey {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--nba-orange);
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+.player-card-pos {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.player-card-body { padding: 0.75rem; }
+
+.player-card-name {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+}
+
+.player-card-stats {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--text-muted-custom);
+    margin-bottom: 0.3rem;
+}
+
+.player-card-country {
+    font-size: 0.78rem;
+    color: var(--text-muted-custom);
+}
+
+/* ---- API ENDPOINT STYLING ---- */
+.api-endpoint {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.api-endpoint code {
+    color: var(--nba-orange);
+    font-size: 0.9rem;
+}
+
+/* ---- FOOTER ---- */
+.footer-nba {
+    background: rgba(13,13,16,0.8);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-muted-custom);
+}
+
+.footer-nba a { color: var(--nba-orange); text-decoration: none; }
+.footer-nba a:hover { text-decoration: underline; }
+
+/* ---- BREADCRUMB ---- */
+.breadcrumb-item a { color: var(--nba-orange); text-decoration: none; }
+.breadcrumb-item a:hover { text-decoration: underline; }
+.breadcrumb-item + .breadcrumb-item::before { color: var(--text-muted-custom); }
+
+/* ---- LOADING ---- */
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: var(--text-muted-custom);
+}
+
+/* ---- SCROLLBAR ---- */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--nba-orange); }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 576px) {
+    .team-badge-large { font-size: 2rem; padding: 0.4rem 0.8rem; }
+    .team-page-title { font-size: 1.5rem; }
+}
+
+/* ---- ソート説明バナー ---- */
+.alert-sort {
+    background: rgba(247, 148, 29, 0.08);
+    border: 1px solid rgba(247, 148, 29, 0.3);
+    border-radius: 10px;
+    color: #e8e8ef;
+}
+
+.alert-sort-fallback {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    color: #aaa;
+}
+
+/* ---- ソート可能ヘッダー ---- */
+th.sortable {
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    transition: color 0.15s;
+}
+
+    th.sortable:hover {
+        color: var(--nba-orange);
+    }
+
+.sort-icon {
+    font-size: 0.7rem;
+    opacity: 0.4;
+    margin-left: 4px;
+}
+
+    .sort-icon.sort-active {
+        opacity: 1;
+        color: var(--nba-orange);
+    }
+
+/* ---- ドロップダウン ---- */
+.dropdown-item.sort-item.active {
+    background: rgba(247,148,29,0.15);
+    color: var(--nba-orange);
+}
+
+.dropdown-item.sort-item:hover {
+    background: rgba(255,255,255,0.06);
+}

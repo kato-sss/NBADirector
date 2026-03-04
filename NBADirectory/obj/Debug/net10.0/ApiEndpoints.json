@@ -1,0 +1,33 @@
+[
+  {
+    "ContainingType": "NBADirectory.Controllers.PlayersApiController",
+    "Method": "GetTeams",
+    "RelativePath": "api/PlayersApi/teams",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "NBADirectory.Controllers.PlayersApiController",
+    "Method": "GetPlayersByTeam",
+    "RelativePath": "api/PlayersApi/teams/{id}/players",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

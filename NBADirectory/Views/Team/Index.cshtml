@@ -1,0 +1,254 @@
+﻿@model NBADirectory.Models.TeamPlayersViewModel
+@{
+    ViewData["Title"] = Model.Team.Full_name;
+    var positionGroups = Model.Players
+        .GroupBy(p => p.Position switch
+        {
+            "G" or "G-F" or "F-G" => "Guard",
+            "F" or "F-G" or "G-F" or "F-C" or "C-F" => "Forward",
+            "C" or "C-F" or "F-C" => "Center",
+            _ => "Other"
+        })
+        .OrderBy(g => g.Key == "Guard" ? 0 : g.Key == "Forward" ? 1 : g.Key == "Center" ? 2 : 3);
+}
+
+<div class="team-hero">
+    <div class="container py-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">チーム一覧</a></li>
+                <li class="breadcrumb-item active">@Model.Team.Full_name</li>
+            </ol>
+        </nav>
+        <div class="d-flex align-items-center gap-4 flex-wrap">
+            <div class="team-badge-large">@Model.Team.Abbreviation</div>
+            <div>
+                <h1 class="team-page-title mb-1">@Model.Team.Full_name</h1>
+                <div class="team-meta-badges">
+                    <span class="badge @(Model.Team.Conference == "East" ? "badge-east" : "badge-west")">
+                        @(Model.Team.Conference == "East" ? "イースタン" : "ウェスタン")
+                    </span>
+                    <span class="badge badge-division">@Model.Team.Division Division</span>
+                    <span class="badge bg-secondary">選手数: @Model.Players.Count</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <!-- Search & Controls -->
+    <div class="row g-3 mb-4 align-items-center">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-dark border-secondary">
+                    <i class="bi bi-search"></i>
+                </span>
+                <input type="text" id="searchInput" class="form-control bg-dark border-secondary text-white"
+                       placeholder="選手名・ポジション・国籍で検索..." />
+                <button class="btn btn-accent" id="searchBtn">検索</button>
+                <button class="btn btn-outline-secondary" id="clearBtn" style="display:none;">クリア</button>
+            </div>
+        </div>
+        <div class="col-md-6 d-flex gap-2 justify-content-md-end">
+            <!-- 並び替えドロップダウン -->
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown">
+                    <i class="bi bi-sort-down me-1"></i><span id="sortLabel">並び替え</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                    <li><h6 class="dropdown-header">並び替え基準</h6></li>
+                    <li>
+                        <a class="dropdown-item sort-item" data-sort="name" data-dir="asc" href="#">
+                            <i class="bi bi-sort-alpha-down me-2"></i>選手名（A→Z）
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item sort-item" data-sort="jersey" data-dir="asc" href="#">
+                            <i class="bi bi-hash me-2"></i>背番号（小さい順）
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item sort-item active" data-sort="position" data-dir="asc" href="#">
+                            <i class="bi bi-person-badge me-2"></i>ポジション順
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item sort-item" data-sort="height" data-dir="desc" href="#">
+                            <i class="bi bi-arrows-vertical me-2"></i>身長（高い順）
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item sort-item" data-sort="weight" data-dir="desc" href="#">
+                            <i class="bi bi-person me-2"></i>体重（重い順）
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="btn-group view-toggle" role="group">
+                <button type="button" class="btn btn-outline-secondary active" id="btnTable" @* onclick="setView('table')" *@>
+                    <i class="bi bi-table"></i> テーブル
+                </button>
+                <button type="button" class="btn btn-outline-secondary" id="btnCard"@*  onclick="setView('card')" *@>
+                    <i class="bi bi-grid-3x3-gap"></i> カード
+                </button>
+            </div>
+            <a href="/api/PlayersApi/teams/@Model.Team.Id/players" target="_blank" class="btn btn-outline-info">
+                <i class="bi bi-code-slash me-1"></i>JSON API
+            </a>
+        </div>
+    </div>
+
+    @if (!Model.Players.Any())
+    {
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            @if (!string.IsNullOrEmpty(Model.SearchQuery))
+            {
+                <span>「@Model.SearchQuery」に一致する選手が見つかりませんでした。</span>
+            }
+            else
+            {
+                <span>このチームの選手データが見つかりませんでした。</span>
+            }
+        </div>
+    }
+    else
+    {
+        <!-- TABLE VIEW -->
+        <div id="tableView">
+            <div class="table-responsive">
+                <table class="table table-dark table-hover players-table">
+                    <thead>
+                        <tr>
+                            <th data-col="jersey" class="sortable"># <i class="bi bi-chevron-expand sort-icon"></i></th>
+                            <th data-col="name" class="sortable">選手名 <i class="bi bi-chevron-expand sort-icon"></i></th>
+                            <th data-col="position" class="sortable">ポジション <i class="bi bi-chevron-expand sort-icon"></i></th>
+                            <th data-col="height" class="sortable">身長 <i class="bi bi-chevron-expand sort-icon"></i></th>
+                            <th data-col="weight" class="sortable">体重 <i class="bi bi-chevron-expand sort-icon"></i></th>
+                            <th data-col="minutes" class="sortable">出場時間 <i class="bi bi-chevron-expand sort-icon"></i></th>
+                            <th>出身国</th>
+                            <th>大学</th>
+                            <th>ドラフト</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playersTableBody">
+                        @foreach (var player in Model.Players)
+                        {
+                            <tr class="player-row"
+                                data-jersey="@(int.TryParse(player.Jersey_number, out var j) ? j : 999)"
+                                data-name="@player.Last_name @player.First_name"
+                                data-position="@player.Position"
+                                data-height="@player.Height"
+                                data-weight="@(int.TryParse(player.Weight, out var w) ? w : 0)"
+                                data-minutes="@(player.AvgMinutes?.ToString("F1") ?? "0")"
+                                data-country="@(player.Country ?? "")"
+                                data-pos-text="@player.PositionDisplay">
+                                <td><span class="jersey-num">@player.JerseyDisplay</span></td>
+                                <td>
+                                    <div class="player-name-cell">
+                                        <span class="player-last">@player.Last_name</span>
+                                        <span class="player-first">, @player.First_name</span>
+                                    </div>
+                                </td>
+                                <td><span class="position-badge pos-@(player.Position.Replace("-", "").ToLower())">@player.PositionDisplay</span></td>
+                                <td>@player.HeightDisplay</td>
+                                <td>@player.WeightDisplay</td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(player.Country))
+                                    {
+                                        <span>@player.Country</span>
+                                    }
+                                    else
+                                    {
+
+                                        <span class="text-muted">-</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(player.College))
+                                    {
+                                        <small>@player.College</small>
+                                    }
+                                    else
+                                    {
+
+                                        <span class="text-muted">-</span>
+                                    }
+                                </td>
+                                <td>
+                                    @if (player.Draft_year.HasValue)
+                                    {
+                                        <small>@player.Draft_year 年 R@player.Draft_round/@player.Draft_number 位</small>
+                                    }
+                                    else
+                                    {
+
+                                        <span class="text-muted">-</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- CARD VIEW -->
+        <div id="cardView" style="display:none;">
+            <div id ="playersCardGrid" class="row g-3">
+                @foreach (var player in Model.Players)
+                {
+                    <div class="col-6 col-md-4 col-lg-3 player-card-col"
+                         data-jersey="@(int.TryParse(player.Jersey_number, out var jc) ? jc : 999)"
+                         data-name="@player.Last_name @player.First_name"
+                         data-position="@player.Position"
+                         data-height="@player.Height"
+                         data-weight="@(int.TryParse(player.Weight, out var wc) ? wc : 0)"
+                         data-minutes="@(player.AvgMinutes?.ToString("F1") ?? "0")"
+                         data-country="@(player.Country ?? "")">
+                        <div class="player-card">
+                            <div class="player-card-header">
+                                <span class="player-card-jersey">@player.JerseyDisplay</span>
+                                <span class="player-card-pos pos-@(player.Position.Replace("-", "").ToLower())">@player.PositionDisplay</span>
+                            </div>
+                            <div class="player-card-body">
+                                <div class="player-card-name">@player.FullName</div>
+                                <div class="player-card-stats">
+                                    <span><i class="bi bi-rulers"></i> @player.HeightDisplay</span>
+                                    <span><i class="bi bi-person"></i> @player.WeightDisplay</span>
+                                </div>
+                                @if (!string.IsNullOrEmpty(player.Country))
+                                {
+                                    <div class="player-card-country">
+                                        <i class="bi bi-geo-alt"></i> @player.Country
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @* <script>
+        function setView(mode) {
+            document.getElementById('tableView').style.display = mode === 'table' ? 'block' : 'none';
+            document.getElementById('cardView').style.display = mode === 'card' ? 'block' : 'none';
+            document.getElementById('btnTable').classList.toggle('active', mode === 'table');
+            document.getElementById('btnCard').classList.toggle('active', mode === 'card');
+            localStorage.setItem('nbaViewMode', mode);
+        }
+
+        // Restore last view mode
+        const saved = localStorage.getItem('nbaViewMode');
+        if (saved) setView(saved);
+    </script>
+    <script id="players-data" type="application/json">
+        @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.Players))
+    </script> *@
+    <script src="~/js/teamSearch.js"></script>
+}

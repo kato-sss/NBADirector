@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="ja" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NBA 選手名鑑</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-nba sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <span class="brand-nba">NBA</span>
+                <span class="brand-dir">選手名鑑</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="bi bi-house-fill me-1"></i>トップ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#apiModal">
+                            <i class="bi bi-code-slash me-1"></i>API
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer-nba mt-5">
+        <div class="container text-center py-4">
+            <p class="mb-1">NBA 選手名鑑 &mdash; Powered by <a href="https://www.balldontlie.io/" target="_blank">BallDontLie API</a></p>
+            <small class="text-muted">データはリアルタイムAPIより取得しています</small>
+        </div>
+    </footer>
+
+    <!-- API Info Modal -->
+    <div class="modal fade" id="apiModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title"><i class="bi bi-code-slash me-2"></i>API エンドポイント</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted mb-3">以下のAPIエンドポイントでJSON形式のデータを取得できます。</p>
+                    <div class="api-endpoint mb-3">
+                        <span class="badge bg-success me-2">GET</span>
+                        <code>/api/PlayersApi/teams</code>
+                        <p class="text-muted small mt-1 mb-0">全チーム一覧を取得</p>
+                    </div>
+                    <div class="api-endpoint mb-3">
+                        <span class="badge bg-success me-2">GET</span>
+                        <code>/api/PlayersApi/teams/{id}/players</code>
+                        <p class="text-muted small mt-1 mb-0">指定チームの選手一覧を取得。<code>?search=</code> でフィルタリング可能</p>
+                    </div>
+                    <hr class="border-secondary">
+                    <h6>データソース</h6>
+                    <p class="text-muted small">
+                        <a href="https://www.balldontlie.io/" target="_blank">BallDontLie API</a> を使用しています。
+                        無料プランでAPIキーを取得し、<code>Services/NbaApiService.cs</code> の <code>ApiKey</code> に設定してください。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

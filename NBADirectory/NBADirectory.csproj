@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\ts\teamSearch.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\teamSearch.ts" />
+  </ItemGroup>
+
+  <Target Name="CompileTypeScript" BeforeTargets="Build">
+    <Exec Command="tsc --project wwwroot/ts/tsconfig.json" />
+  </Target>
+</Project>

@@ -1,0 +1,97 @@
+@model NBADirectory.Models.HomeViewModel
+@{
+    ViewData["Title"] = "チーム一覧";
+    var divisions = new[] { "Atlantic", "Central", "Southeast", "Northwest", "Pacific", "Southwest" };
+    var divisionJa = new Dictionary<string, string>
+    {
+        ["Atlantic"] = "アトランティック",
+        ["Central"] = "セントラル",
+        ["Southeast"] = "サウスイースト",
+        ["Northwest"] = "ノースウェスト",
+        ["Pacific"] = "パシフィック",
+        ["Southwest"] = "サウスウェスト"
+    };
+}
+
+<div class="hero-section">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="hero-title">NBA <span class="text-accent">選手名鑑</span></h1>
+            <p class="hero-subtitle">30チーム全選手の最新情報をリアルタイムAPIで表示</p>
+        </div>
+    </div>
+</div>
+
+<div class="container pb-5">
+    <!-- Conference Tabs -->
+    <ul class="nav nav-pills conference-tabs mb-4" id="conferenceTabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="pill" href="#east">
+                <i class="bi bi-arrow-right-circle me-1"></i>イースタン・カンファレンス
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="pill" href="#west">
+                <i class="bi bi-arrow-left-circle me-1"></i>ウェスタン・カンファレンス
+            </a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- East Conference -->
+        <div class="tab-pane fade show active" id="east">
+            @foreach (var division in new[] { "Atlantic", "Central", "Southeast" })
+            {
+                var divTeams = Model.EastTeams.Where(t => t.Division == division).ToList();
+                if (!divTeams.Any()) continue;
+                <div class="mb-4">
+                    <h5 class="division-header">
+                        <span class="division-label east">EAST</span>
+                        @divisionJa.GetValueOrDefault(division, division) Division
+                    </h5>
+                    <div class="row g-3">
+                        @foreach (var team in divTeams)
+                        {
+                            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                                <a href="/Team/Index/@team.Id" class="team-card">
+                                    <div class="team-abbr">@team.Abbreviation</div>
+                                    <div class="team-city">@team.City</div>
+                                    <div class="team-name">@team.Name</div>
+                                    <div class="team-arrow"><i class="bi bi-arrow-right"></i></div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- West Conference -->
+        <div class="tab-pane fade" id="west">
+            @foreach (var division in new[] { "Northwest", "Pacific", "Southwest" })
+            {
+                var divTeams = Model.WestTeams.Where(t => t.Division == division).ToList();
+                if (!divTeams.Any()) continue;
+                <div class="mb-4">
+                    <h5 class="division-header">
+                        <span class="division-label west">WEST</span>
+                        @divisionJa.GetValueOrDefault(division, division) Division
+                    </h5>
+                    <div class="row g-3">
+                        @foreach (var team in divTeams)
+                        {
+                            <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+                                <a href="/Team/Index/@team.Id" class="team-card">
+                                    <div class="team-abbr">@team.Abbreviation</div>
+                                    <div class="team-city">@team.City</div>
+                                    <div class="team-name">@team.Name</div>
+                                    <div class="team-arrow"><i class="bi bi-arrow-right"></i></div>
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

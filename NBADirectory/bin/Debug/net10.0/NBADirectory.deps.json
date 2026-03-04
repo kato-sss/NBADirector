@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "NBADirectory/1.0.0": {
+        "runtime": {
+          "NBADirectory.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NBADirectory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
