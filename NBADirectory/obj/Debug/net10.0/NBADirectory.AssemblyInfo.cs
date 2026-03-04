@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NBADirectory")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+abdaaa877d3ce1df5289d2aae7e7ae16495c6687")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2cb1bf6024e9113faff6916d6373459016e46426")]
 [assembly: System.Reflection.AssemblyProductAttribute("NBADirectory")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NBADirectory")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

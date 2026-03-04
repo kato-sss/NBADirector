@@ -2,11 +2,11 @@ using NBADirectory.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// MVC
 builder.Services.AddControllersWithViews();
-
-// ★ これを追加 ★
 builder.Services.AddHttpClient<INbaApiService, NbaApiService>();
+builder.Services.AddMemoryCache();
+builder.Services.AddScoped<NBADirectory.Services.INbaApiService,
+                            NBADirectory.Services.NbaApiService>();
 
 var app = builder.Build();
 
