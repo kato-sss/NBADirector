@@ -34,6 +34,14 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+     
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install TypeScript
+        run: npm install -g typescript
 
   deploy:
     runs-on: windows-latest
